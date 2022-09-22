@@ -1,0 +1,16 @@
+<h1>Editing score</h1>
+
+<% for e in @scores do %>
+    <tr>
+        <%= render "form", score: e %>
+        <td><%= link_to "delete", controller: "main", action: "delete", id: e.id, :method => :delete%><td>
+        <td><%= link_to "edit", controller: "main", action: "edit", id: e.id, :method => :edit%></td>
+    <tr>
+<% end %>
+  
+<br>
+
+<div>
+  <%= link_to "Show this score", @score %> |
+  <%= link_to "Back to scores", scores_path %>
+</div>
